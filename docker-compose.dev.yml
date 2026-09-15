@@ -33,7 +33,8 @@ services:
       - uploads:/app/public/uploads
       - logs:/app/app/logs
     environment:
-      - CI_ENVIRONMENT=development
+      - FORCE_HTTPS=true
+      - CI_ENVIRONMENT=production
       - ALLOWED_HOSTNAMES=pos.craftedchunks.com,localhost
       - MYSQL_USERNAME=admin
       - MYSQL_PASSWORD=pointofsale
