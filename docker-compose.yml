@@ -9,8 +9,6 @@ services:
             - mysql
         ports:
             - "80:80"
-        networks:
-            - app_net
         volumes:
             - uploads:/app/public/uploads
             - logs:/app/writable/logs
