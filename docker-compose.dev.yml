@@ -37,14 +37,11 @@ services:
       - "traefik.http.middlewares.ospos-csp.headers.customresponseheaders.Content-Security-Policy=upgrade-insecure-requests"
       - "traefik.http.routers.ospos.middlewares=ospos-csp"
     environment:
-      - PROXY_MODE=true
-      - CI_ENVIRONMENT=development
+      - CI_ENVIRONMENT=production
       - ALLOWED_HOSTNAMES=pos.craftedchunks.com
       - MYSQL_USERNAME=admin
       - MYSQL_PASSWORD=pointofsale
       - MYSQL_DB_NAME=ospos
       - MYSQL_HOST_NAME=mysql
       - PHP_TIMEZONE=UTC
-      - PHP_INI_DISPLAY_ERRORS=On
-      - PHP_INI_STARTUP_ERRORS=On
-      - PHP_INI_ERROR_REPORTING=E_ALL
+      - app.baseURL=https://pos.craftedchunks.com/
